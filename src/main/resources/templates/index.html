@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Persona</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<div>
+    <table class="table striped responsive-table centered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Accion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="persona:${personas}">
+            <td>${persona.id}</td>
+            <td>${persona.nombre}</td>
+            <td>${persona.telefono}</td>
+            <td>
+                <a class="waves-effect waves-light btn">Editar</a>
+                <a class="waves-effect waves-light red">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
